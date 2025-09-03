@@ -6,22 +6,6 @@ This project demonstrates how to perform **Retrieval-Augmented Generation (RAG)*
 
 ## 🚀 Overview
 
-Conventional RAG pipelines face challenges with semi-structured data:
-
-- Text splitting can break tables and corrupt data.
-- Embedding raw tables directly can harm semantic similarity search.
-
-This project solves these issues by:
-
-1. Extracting **text, tables, and images** separately.
-2. Converting tables from **HTML → Markdown** for better embeddings.
-3. Using a **multi-vector retriever with Redis** to store raw content and summaries.
-4. Building retrieval pipelines with **LangChain Expression Language (LCEL)**.
-
----
-
-## 🚀 Overview
-
 Traditional RAG pipelines struggle with **semi-structured data**:
 
 - Text splitting can break tables and distort meaning.

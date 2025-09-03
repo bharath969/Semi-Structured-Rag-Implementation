@@ -67,7 +67,7 @@ This separation ensures **better semantic search** across multiple data modaliti
 
 ````bash
 # Clone the repository
-git clone https://github.com/yourusername/semi-structured-rag.git
+git clone https://github.com/bharath969/Semi-Structured-Rag-Implementation.git
 cd semi-structured-rag
 
 # Create virtual environment (named rag_env)

@@ -35,15 +35,29 @@ This project solves those issues by:
 - Tables are extracted in **HTML** format.
 - Converted to **Markdown** using `htmltabletomd` → ensures embeddings capture **row/column semantics** better.
 
-### 3. Embeddings
+### 3. 📌 Embeddings
 
-Each content type is handled separately:
+Each content type is processed **separately**, but the same **GPT-4o model** is used for generating summaries before embeddings are created.  
+This ensures consistency and high-quality semantic representations across all data types:
 
-- **Text Chunks** → embedded using a **text embedding model**.
-- **Tables (Markdown)** → embedded as structured text.
-- **Images** → processed with **captioning / CLIP embeddings** to capture visual meaning.
+- **Text Chunks**  
+  - Generate a concise **summary** for each text chunk.  
+  - Embed the summary instead of the raw chunk.  
 
-This separation ensures **better semantic search** across multiple data modalities.
+- **Tables (Markdown)**  
+  - Convert tables from **HTML → Markdown**.  
+  - Use GPT-4o to create a **summary** capturing key insights.  
+  - Embed the summary rather than the entire raw table.  
+
+- **Images**  
+  - Generate a **caption/summary** of the image using GPT-4o.  
+  - Embed the caption for semantic search (optionally enhanced with CLIP embeddings).  
+
+By embedding **summaries instead of raw content**, the system:  
+- Reduces embedding size.  
+- Improves retrieval relevance.  
+- Keeps representations consistent across **text, tables, and images**.  
+
 
 ### 4. Vector Store (Redis)
 
